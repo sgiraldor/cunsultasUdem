@@ -1,0 +1,20 @@
+<div class="certificado-card">
+    <div class="card-image">
+      <!-- Imagen del certificado -->
+      <img src="https://via.placeholder.com/300" alt="Imagen del certificado">
+      <span class="favorite">Favorito entre estudiantes</span>
+    </div>
+  
+    <div class="card-content">
+      <h2>{{ title }}</h2>
+      <p>{{ description }}</p>
+      <p *ngIf="price">{{ price | currency: 'COP' }} por certificado</p>
+      <p *ngIf="!price">Gratuito</p>
+    </div>
+  
+    <div class="card-rating">
+      <span class="rating-star">★</span>
+      <span>{{ rating }}</span>
+    </div>
+  </div>
+  

@@ -1,0 +1,82 @@
+<div class="father">
+    <div class="container">
+      <!-- Navegación de categorías -->
+      <nav class="categories">
+        <div class="category-item" (click)="onCategoryClick('certificates')">
+          <fa-icon [icon]="['fas', 'certificate']"></fa-icon> Certificados
+        </div>
+        <div class="category-item" (click)="onCategoryClick('diplomas')">
+          <fa-icon [icon]="['fas', 'award']"></fa-icon> Diplomas
+        </div>
+        <div class="category-item" (click)="onCategoryClick('careers')">
+          <fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon> Carreras
+        </div>
+        <div class="category-item" (click)="onCategoryClick('courses')">
+          <fa-icon [icon]="['fas', 'book']"></fa-icon> Diplomados
+        </div>
+        <div class="category-item" (click)="onCategoryClick('grades')">
+          <fa-icon [icon]="['fas', 'clipboard']"></fa-icon> Notas y más
+        </div>
+        <div class="category-item" (click)="onCategoryClick('theater')">
+          <fa-icon [icon]="['fas', 'theater-masks']"></fa-icon> Teatro
+        </div>
+        <div class="category-item" (click)="onCategoryClick('tutorials')">
+          <fa-icon [icon]="['fas', 'chalkboard-teacher']"></fa-icon> Nivelatorios
+        </div>
+        <div class="category-item" (click)="onCategoryClick('advisories')">
+          <fa-icon [icon]="['fas', 'user-graduate']"></fa-icon> Asesorías
+        </div>
+        <div class="category-item" (click)="onCategoryClick('renewals')">
+          <fa-icon [icon]="['fas', 'handshake']"></fa-icon> Renovación de convenios
+        </div>
+      </nav>
+    </div>
+ 
+
+  </div>
+
+  <div class="container-card">
+    <app-certificado-card
+  [title]="'Certificado en Desarrollo Web'"
+  [description]="'Aprende los fundamentos de desarrollo web moderno.'"
+  [price]="200000"
+  [rating]="4.8">
+</app-certificado-card>
+
+<app-certificado-card
+[title]="'Certificado en Desarrollo Web'"
+[description]="'Aprende los fundamentos de desarrollo web moderno.'"
+[price]="200000"
+[rating]="4.8">
+</app-certificado-card>
+
+<app-certificado-card
+[title]="'Certificado en Desarrollo Web'"
+[description]="'Aprende los fundamentos de desarrollo web moderno.'"
+[price]="200000"
+[rating]="4.8">
+</app-certificado-card>
+
+<app-certificado-card
+[title]="'Certificado en Desarrollo Web'"
+[description]="'Aprende los fundamentos de desarrollo web moderno.'"
+[price]="200000"
+[rating]="4.8">
+</app-certificado-card>
+
+<app-certificado-card
+[title]="'Certificado en Desarrollo Web'"
+[description]="'Aprende los fundamentos de desarrollo web moderno.'"
+[price]="200000"
+[rating]="4.8">
+</app-certificado-card>
+
+<app-certificado-card
+[title]="'Certificado de estudio'"
+[description]="'Aprende los fundamentos de desarrollo web moderno.'"
+
+[rating]="4.8">
+</app-certificado-card>
+
+  </div>
+ 

@@ -1,0 +1,30 @@
+.father {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centra los ítems horizontalmente */
+  }
+  
+  .categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Espacio uniforme entre los ítems */
+    flex-wrap: wrap; /* Asegura que los ítems se ajusten si el contenedor es pequeño */
+    width: 100%; /* Asegura que las categorías ocupen todo el ancho disponible */
+  }
+  
+  .category-item {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .category-item i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  .container-card{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
