@@ -1,30 +1,109 @@
 .father {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centra los ítems horizontalmente */
-  }
-  
-  .categories {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Espacio uniforme entre los ítems */
-    flex-wrap: wrap; /* Asegura que los ítems se ajusten si el contenedor es pequeño */
-    width: 100%; /* Asegura que las categorías ocupen todo el ancho disponible */
-  }
-  
-  .category-item {
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-  }
-  
-  .category-item i {
-    margin-right: 10px; /* Espacio entre el icono y el texto */
-  }
-  .container-card{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para centrar mejor */
+  align-items: center; /* Centrar horizontalmente */
+  padding: 20px; /* Añadir padding para alejar el contenido de las esquinas */
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Centrar las categorías */
+  flex-wrap: wrap; /* Asegura que los ítems se ajusten si el contenedor es pequeño */
+  width: 100%; /* Asegura que las categorías ocupen todo el ancho disponible */
+  margin-bottom: 20px; /* Añadir margen inferior para separar las categorías de las tarjetas */
+}
+
+.category-item {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.category-item i {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Ajustar para tener 5 tarjetas por fila */
+  gap: 24px; /* Espacio entre las tarjetas */
+  justify-items: center; /* Centrar las tarjetas horizontalmente */
+  padding: 0 20px; /* Añadir padding para que las tarjetas no queden tan cerca de los bordes */
+  max-width: 1400px; /* Limitar el ancho máximo para centrar mejor */
+  margin-top: 0; /* Reducir o eliminar el margen superior */
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinear al inicio para que esté más arriba */
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  padding-top: 20px; /* Añadir padding superior para alejar del borde superior */
+}
+
+.success-message {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #e0ffe0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-message h2 {
+  color: #ff0033;
+}
+
+.success-message p {
+  margin: 20px 0;
+}
+
+.success-message button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.success-message button:hover {
+  background-color: #fe0000;
+}
+
+.career-info {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.career-info h2 {
+  color: #ff0000;
+}
+
+.career-info p {
+  margin: 10px 0;
+}
+
+.career-info button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.career-info button:hover {
+  background-color: #ff0000;
+}

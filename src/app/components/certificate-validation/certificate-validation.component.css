@@ -1,0 +1,47 @@
+.validation-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .validation-form div {
+    margin-bottom: 15px;
+  }
+  
+  .validation-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .validation-form input,
+  .validation-form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .validation-form .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .validation-form button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .validation-form button:hover {
+    background-color: #ff0000;
+  }

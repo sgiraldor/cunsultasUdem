@@ -1,0 +1,41 @@
+<div class="validation-form">
+    <form [formGroup]="validationForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="fullName">Nombre Completo:</label>
+        <input id="fullName" formControlName="fullName" type="text">
+      </div>
+      <div>
+        <label for="documentNumber">Número de Documento:</label>
+        <input id="documentNumber" formControlName="documentNumber" type="text">
+      </div>
+      <div>
+        <label for="paymentMethod">Método de Pago:</label>
+        <select id="paymentMethod" formControlName="paymentMethod" (change)="onPaymentMethodChange()">
+          <option value="debit">Tarjeta Débito</option>
+          <option value="credit">Tarjeta Crédito</option>
+        </select>
+      </div>
+      <div *ngIf="showCardFields">
+        <div>
+          <label for="cardNumber">Número de Tarjeta:</label>
+          <input id="cardNumber" formControlName="cardNumber" type="text">
+        </div>
+        <div>
+          <label for="cvc">CVC:</label>
+          <input id="cvc" formControlName="cvc" type="text">
+        </div>
+        <div>
+          <label for="expiryDate">Fecha de Expiración:</label>
+          <input id="expiryDate" formControlName="expiryDate" type="text" placeholder="MM/AA">
+        </div>
+        <div *ngIf="showCreditCardFields">
+          <label for="cardHolderName">Nombre del Titular:</label>
+          <input id="cardHolderName" formControlName="cardHolderName" type="text">
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" (click)="onBack()">Volver Atrás</button>
+        <button type="submit">Aceptar</button>
+      </div>
+    </form>
+  </div>

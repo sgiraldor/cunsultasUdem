@@ -1,82 +1,62 @@
 <div class="father">
-    <div class="container">
-      <!-- Navegación de categorías -->
-      <nav class="categories">
-        <div class="category-item" (click)="onCategoryClick('certificates')">
-          <fa-icon [icon]="['fas', 'certificate']"></fa-icon> Certificados
-        </div>
-        <div class="category-item" (click)="onCategoryClick('diplomas')">
-          <fa-icon [icon]="['fas', 'award']"></fa-icon> Diplomas
-        </div>
-        <div class="category-item" (click)="onCategoryClick('careers')">
-          <fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon> Carreras
-        </div>
-        <div class="category-item" (click)="onCategoryClick('courses')">
-          <fa-icon [icon]="['fas', 'book']"></fa-icon> Diplomados
-        </div>
-        <div class="category-item" (click)="onCategoryClick('grades')">
-          <fa-icon [icon]="['fas', 'clipboard']"></fa-icon> Notas y más
-        </div>
-        <div class="category-item" (click)="onCategoryClick('theater')">
-          <fa-icon [icon]="['fas', 'theater-masks']"></fa-icon> Teatro
-        </div>
-        <div class="category-item" (click)="onCategoryClick('tutorials')">
-          <fa-icon [icon]="['fas', 'chalkboard-teacher']"></fa-icon> Nivelatorios
-        </div>
-        <div class="category-item" (click)="onCategoryClick('advisories')">
-          <fa-icon [icon]="['fas', 'user-graduate']"></fa-icon> Asesorías
-        </div>
-        <div class="category-item" (click)="onCategoryClick('renewals')">
-          <fa-icon [icon]="['fas', 'handshake']"></fa-icon> Renovación de convenios
-        </div>
-      </nav>
-    </div>
- 
-
+  <div class="container">
+    <!-- Navegación de categorías -->
+    <nav class="categories" *ngIf="!showValidationForm && !showSuccessMessage && !showCareerInfo">
+      <div class="category-item" (click)="onCategoryClick('certificates')">
+        <fa-icon [icon]="['fas', 'certificate']"></fa-icon> Certificados
+      </div>
+      <div class="category-item" (click)="onCategoryClick('diplomas')">
+        <fa-icon [icon]="['fas', 'award']"></fa-icon> Diplomas
+      </div>
+      <div class="category-item" (click)="onCategoryClick('careers')">
+        <fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon> Carreras
+      </div>
+      <div class="category-item" (click)="onCategoryClick('courses')">
+        <fa-icon [icon]="['fas', 'book']"></fa-icon> Diplomados
+      </div>
+      <div class="category-item" (click)="onCategoryClick('grades')">
+        <fa-icon [icon]="['fas', 'clipboard']"></fa-icon> Notas y más
+      </div>
+      <div class="category-item" (click)="onCategoryClick('theater')">
+        <fa-icon [icon]="['fas', 'theater-masks']"></fa-icon> Teatro
+      </div>
+      <div class="category-item" (click)="onCategoryClick('tutorials')">
+        <fa-icon [icon]="['fas', 'chalkboard-teacher']"></fa-icon> Nivelatorios
+      </div>
+      <div class="category-item" (click)="onCategoryClick('advisories')">
+        <fa-icon [icon]="['fas', 'user-graduate']"></fa-icon> Asesorías
+      </div>
+      <div class="category-item" (click)="onCategoryClick('renewals')">
+        <fa-icon [icon]="['fas', 'handshake']"></fa-icon> Renovación de convenios
+      </div>
+    </nav>
   </div>
+</div>
 
-  <div class="container-card">
-    <app-certificado-card
-  [title]="'Certificado de Especialización'"
-  [description]="'Acredita conocimientos avanzados en un área específica dentro de un campo profesional'"
-  [price]="20000"
-  [rating]="4.8">
-</app-certificado-card>
+<div class="container-card" *ngIf="!showValidationForm && !showSuccessMessage && !showCareerInfo">
+  <app-certificado-card
+    *ngFor="let card of cards"
+    [title]="card.title"
+    [description]="card.description"
+    [price]="card.price"
+    [rating]="card.rating"
+    [imageUrl]="card.imageUrl"
+    (cardSelected)="onCardSelected(card)">
+  </app-certificado-card>
+</div>
 
-<app-certificado-card
-[title]="'Certificado de Prácticas Profesionales'"
-[description]="'Certifica que el estudiante ha completado su período de prácticas como parte de su formación académica.'"
-[price]="20000"
-[rating]="4.8">
-</app-certificado-card>
+<div *ngIf="showValidationForm" class="centered-container">
+  <app-certificate-validation (back)="onBack()" (submit)="onSubmit()"></app-certificate-validation>
+</div>
 
-<app-certificado-card
-[title]="'Certificado de Título Profesional'"
-[description]="'Verifica que el egresado ha obtenido un título en una disciplina específica.'"
-[price]="20000"
-[rating]="4.8">
-</app-certificado-card>
-
-<app-certificado-card
-[title]="'Certificado de Graduación'"
-[description]="'Confirma que el estudiante ha cumplido con todos los requisitos para obtener su título.'"
-[price]="20000"
-[rating]="4.8">
-</app-certificado-card>
-
-<app-certificado-card
-[title]="'Certificado idiomas '"
-[description]="'Acredita el dominio de un idioma extranjero, basado en pruebas o cursos específicos.'"
-[price]="20000"
-[rating]="4.8">
-</app-certificado-card>
-
-<app-certificado-card
-[title]="'Certificado de estudio'"
-[description]="'Acredita las asignaturas cursadas y calificaciones obtenidas por un estudiante en su carrera.'"
-[price]="20000"
-[rating]="4.8">
-</app-certificado-card>
-
+<div *ngIf="showSuccessMessage" class="centered-container">
+  <div class="success-message">
+    <h2>¡Su pedido ha sido aceptado exitosamente!</h2>
+    <p>Gracias por su compra. Recibirá un correo electrónico con los detalles de su pedido.</p>
+    <button (click)="onBack()">Volver al Dashboard</button>
   </div>
- 
+</div>
+
+<div *ngIf="showCareerInfo" class="centered-container">
+  <app-career-info [career]="selectedCareer" (back)="onBack()"></app-career-info>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="screen">
+      <div class="screen__content">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register">
+          <div class="register__field">
+            <i class="register__icon fas fa-user"></i>
+            <input type="text" class="register__input" placeholder="User name / Email" formControlName="username">
+          </div>
+          <div class="register__field">
+            <i class="register__icon fas fa-lock"></i>
+            <input type="password" class="register__input" placeholder="Password" formControlName="password">
+          </div>
+          <button class="button register__submit" type="submit">
+            <span class="button__text">Register Now</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>
+        </form>
+      </div>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<div class="career-info">
+    <h2>{{ career.title }}</h2>
+    <p>{{ career.description }}</p>
+    <p><strong>Precio:</strong> {{ career.price | currency }}</p>
+    <p><strong>Calificación:</strong> {{ career.rating }}</p>
+    <h3>Información General</h3>
+    <p>{{ career.generalInfo }}</p>
+    <h3>Materias</h3>
+    <ul>
+      <li *ngFor="let subject of career.subjects">{{ subject }}</li>
+    </ul>
+    <h3>Oportunidades Laborales</h3>
+    <p>{{ career.jobOpportunities }}</p>
+    <button (click)="back.emit()">Volver</button>
+  </div>
