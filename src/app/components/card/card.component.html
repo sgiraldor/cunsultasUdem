@@ -7,7 +7,7 @@
   <div class="card-content">
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
-    <p *ngIf="price">{{ price | currency: 'COP' }} por certificado</p>
+    <p *ngIf="price">{{ price | currency: 'COP' }} </p>
     <p *ngIf="!price">Gratuito</p>
   </div>
 
